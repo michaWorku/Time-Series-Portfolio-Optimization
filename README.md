@@ -52,7 +52,7 @@ The project addresses GMF Investments' need for data-driven insights to provide 
 ├── Makefile                 # Common development tasks (setup, test, lint, clean)
 ├── .env                     # Environment variables (e.g., API keys - kept out of Git)
 ├── src/                          # Core source code for the project
-│   ├── data_ingestion.py         # Fetches and loads data from YFinance
+│   ├── data_fetch.py         # Fetches and loads data from YFinance
 |   ├── data_preprocessing.py     # Cleans and preprocesses financial data
 │   ├── EDA/                      # Scripts for Exploratory Data Analysis (EDA)
 │   │   ├── basic_data_inspection.py    # Performs initial checks on data types, size, and structure.
