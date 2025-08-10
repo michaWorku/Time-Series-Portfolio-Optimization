@@ -5,7 +5,7 @@ plotly
 
 # Data manipulation and API
 pandas
-numpy
+numpy==1.26.4
 yfinance
 
 # Time Series Forecasting
@@ -13,6 +13,7 @@ statsmodels
 pmdarima
 tensorflow
 keras
+joblib
 scikit-learn
 
 # Portfolio Optimization
