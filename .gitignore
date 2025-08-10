@@ -165,3 +165,6 @@ logs/
 # Temporary files
 *.tmp
 *.temp
+
+/models/*
+/outputs/*
