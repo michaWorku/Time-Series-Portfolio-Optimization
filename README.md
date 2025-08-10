@@ -52,16 +52,10 @@ The project addresses GMF Investments' need for data-driven insights to provide 
 ├── Makefile                 # Common development tasks (setup, test, lint, clean)
 ├── .env                     # Environment variables (e.g., API keys - kept out of Git)
 ├── src/                          # Core source code for the project
-│   ├── data_ingestion.py         # Fetches and loads data from YFinance
+│   ├── data_fetch.py         # Fetches and loads data from YFinance
 |   ├── data_preprocessing.py     # Cleans and preprocesses financial data
 │   ├── EDA/                      # Scripts for Exploratory Data Analysis (EDA)
-│   │   ├── basic_data_inspection.py    # Performs initial checks on data types, size, and structure.
-│   │   ├── missing_values_analysis.py  # Identifies and analyzes patterns of missing data.
-│   │   ├── univariate_analysis.py      # Analyzes distributions of individual variables.
-│   │   ├── bivariate_analysis.py       # Explores relationships between pairs of variables.
-│   │   ├── multivariate_analysis.py    # Investigates relationships among multiple variables.
-│   │   ├── temporal_analysis.py        # Analyzes time-based patterns and trends.
-│   │   └── outlier_analysis.py         # Detects and investigates anomalous data points.
+│   │   └── eda.py                # Visualize prices, analyze volatility, detect outliers, check for stationarity and calculate key risk metrics   
 |   ├── feature_engineering.py    # Creates features like returns and volatility
 │   ├── models/                   # Bayesian change point modeling
 │   │   ├── arima_model.py        # ARIMA/SARIMA model training and forecasting
