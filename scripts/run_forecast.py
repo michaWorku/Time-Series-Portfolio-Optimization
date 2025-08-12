@@ -86,7 +86,17 @@ def run_full_forecast_pipeline(
     )
     lstm_forecast = pd.Series(lstm_forecast_vals, index=arima_forecast_index)
 
-    # 5. Plot results
+        # 5. Save forecasts to CSV
+    arima_csv_path = OUTPUTS_PATH / 'tsla_forecast_arima.csv'
+    lstm_csv_path = OUTPUTS_PATH / 'tsla_forecast_lstm.csv'
+
+    arima_forecast.to_csv(arima_csv_path, header=["forecast"])
+    lstm_forecast.to_csv(lstm_csv_path, header=["forecast"])
+
+    print(f"\nARIMA forecast CSV saved to: {arima_csv_path}")
+    print(f"LSTM forecast CSV saved to: {lstm_csv_path}")
+
+    # 6. Plot results
     print("\n--- Plotting Results ---")
     plot_history_and_forecast(
         history=plot_history,
