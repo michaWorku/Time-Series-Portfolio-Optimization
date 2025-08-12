@@ -1,45 +1,55 @@
 # **Time-Series-Portfolio-Optimization**
 
-## **Project Description**
-A data science and machine learning solution for Guide Me in Finance (GMF) Investments. The project uses time series forecasting to predict asset price movements, which are then used to optimize an investment portfolio of high-growth, stable, and diversified assets. The final strategy is validated through backtesting.
+A data science and machine learning solution for Guide Me in Finance (GMF) Investments. This project uses time series forecasting to predict asset price movements, which are then used to optimize an investment portfolio and validate the strategy through backtesting.
 
-## Table of Contents
-- [Project Description](#project-description)
-- [Business Understanding](#business-understanding)
-- [Project Overview](#project-overview)
-- [Key Features](#key-features)
-- [Business Objectives](#business-objectives)
-- [Project Structure](#project-structure)
-- [Technologies Used](#technologies-used)
-- [Setup and Installation](#setup-and-installation)
-- [Usage](#usage)
-- [Development and Evaluation](#development-and-evaluation)
-- [Contributing](#contributing)
-- [License](#license)
+## **Table of Contents**
+
+1. [Project Description](https://www.google.com/search?q=%23project-description)
+2. [Business Understanding](https://www.google.com/search?q=%23business-understanding)
+3. [Project Overview](https://www.google.com/search?q=%23project-overview)
+4. [Key Features](https://www.google.com/search?q=%23key-features)
+5. [Business Objectives](https://www.google.com/search?q=%23business-objectives)
+6. [Project Structure](https://www.google.com/search?q=%23project-structure)
+7. [Technologies Used](https://www.google.com/search?q=%23technologies-used)
+8. [Setup and Installation](https://www.google.com/search?q=%23setup-and-installation)
+9. [Usage](https://www.google.com/search?q=%23usage)
+10. [Development and Evaluation](https://www.google.com/search?q=%23development-and-evaluation)
+11. [Contributing](https://www.google.com/search?q=%23contributing)
+12. [License](https://www.google.com/search?q=%23license)
+
+### **Project Description**
+
+This project provides a comprehensive data science and machine learning solution for Guide Me in Finance (GMF) Investments. The core of the solution lies in leveraging time series forecasting models to predict future asset price movements. These predictions are then used as inputs for a portfolio optimization strategy, which aims to maximize returns for a given level of risk. The entire strategy is rigorously validated through backtesting against historical data.
 
 ### **Business Understanding**
 
-GMF Investments is a financial advisory firm that uses cutting-edge technology and data-driven insights for personalized portfolio management. The project's goal is to enhance portfolio performance by integrating advanced time series forecasting models to predict market trends, optimize asset allocation, and manage risks.
+GMF Investments is a financial advisory firm that uses data-driven insights for personalized portfolio management. The goal of this project is to enhance portfolio performance by integrating advanced time series forecasting models to predict market trends, optimize asset allocation, and manage risks more effectively. This allows GMF to provide clients with a more sophisticated and data-backed investment strategy.
 
 ### **Project Overview**
 
-The project follows a full data science workflow: data extraction, preprocessing, model development, portfolio optimization, and strategy backtesting. Historical financial data for Tesla (TSLA), the Vanguard Total Bond Market ETF (BND), and the S&P 500 ETF (SPY) are used. The project builds and compares forecasting models, including classical statistical models (ARIMA/SARIMA) and deep learning models (LSTM). The most effective model's forecasts are then used in a Modern Portfolio Theory (MPT) framework to construct an optimal portfolio, which is validated against a simple benchmark portfolio through backtesting.
+The project follows a full data science workflow:
+
+1. **Data Extraction & Preprocessing**: Sourcing historical financial data for key assets.
+2. **Model Development**: Building and training both statistical (ARIMA) and deep learning (LSTM) forecasting models.
+3. **Portfolio Optimization**: Using model forecasts to create an optimal asset allocation strategy.
+4. **Strategy Backtesting**: Evaluating the performance of the optimized portfolio against a benchmark.
 
 ### **Key Features**
 
-- **Data Sourcing**: Automated fetching of historical financial data using the `yfinance` API.
-- **Time Series Forecasting**: Implementation and comparison of classical statistical models (ARIMA/SARIMA) and deep learning models (LSTM) for price prediction.
-- **Portfolio Optimization**: Application of Modern Portfolio Theory (MPT) to generate an Efficient Frontier and identify optimal portfolios.
-- **Strategy Backtesting**: Simulation of the optimized portfolio's performance against a benchmark to validate the investment strategy.
+- **Multi-model Forecasting**: Utilizes both traditional ARIMA and advanced LSTM neural networks for robust price predictions.
+- **Automated Pipeline**: A modular and scalable architecture allows for easy extension and automation of the entire workflow.
+- **Risk-Adjusted Optimization**: Implements Modern Portfolio Theory (MPT) to find the most efficient portfolio based on predicted returns and volatility.
+- **Performance Evaluation**: Comprehensive evaluation of models and backtested strategies using standard metrics like MAE, RMSE, Sharpe Ratio, and cumulative returns.
 
 ### **Business Objectives**
 
-The project addresses GMF Investments' need for data-driven insights to provide tailored investment strategies by:
-- Predicting future market movements to inform portfolio adjustments.
-- Optimizing asset allocation to enhance portfolio performance and manage risk.
-- Using advanced technology to maintain a competitive edge.
+- Develop a predictive model to forecast future asset prices.
+- Create an optimized asset allocation strategy that maximizes the Sharpe Ratio.
+- Validate the strategy's performance against a standard market index.
+- Provide a clear, reproducible pipeline for future model updates and analysis.
 
-## **Project Structure**
+### **Project Structure**
+
 ```
 ├── .vscode/                 # VSCode specific settings
 ├── .github/                 # GitHub specific configurations (e.g., Workflows)
@@ -71,6 +81,10 @@ The project addresses GMF Investments' need for data-driven insights to provide 
 ├── notebooks/               # Jupyter notebooks for experimentation, EDA, prototyping
     └── eda.ipynb            # Notebook for initial data exploration and visualizations
 ├── scripts/                 # Standalone utility scripts (e.g., data processing, deployment)
+│       ├── __init__.py
+│       ├── run_backtest.py  # Backtesting script to validate the portfolio strategy
+│       ├── run_forecast.py  # Forecasting script to generate predictions
+│       └── run_portfolio_opt.py # Portfolio optimization script to generate optimal asset allocation
 ├── docs/                    # Project documentation (e.g., Sphinx docs)
 ├── data/                    # Data storage (raw, processed)
 │   ├── raw/                 # Original, immutable raw data
@@ -79,25 +93,16 @@ The project addresses GMF Investments' need for data-driven insights to provide 
 └── examples/                # Example usage of the project components
 ```
 
+### **Technologies Used**
 
-## **Technologies Used**
+- **Python 3.8+**
+- **Data Science Stack**: `Pandas`, `Numpy`, `Scikit-learn`
+- **Time Series**: `pmdarima`
+- **Deep Learning**: `TensorFlow`, `Keras`
+- **Visualization**: `Matplotlib`
+- **Portfolio Optimization**: `PyPortfolioOpt`
 
-- **Python**: Core programming language.
-- **Pandas, NumPy**: For data manipulation and numerical operations.
-- **YFinance**: API for fetching financial data.
-- **Statsmodels, pmdarima**: For ARIMA/SARIMA model implementation.
-- **TensorFlow/Keras**: For LSTM deep learning models.
-- **PyPortfolioOpt**: For Modern Portfolio Theory (MPT) implementation.
-- **Matplotlib, Seaborn**: For data visualization.
-
-## **Setup and Installation**
-
-### **Prerequisites**
-
-- Python 3.8+
-- Git
-
-### **Steps**
+### **Setup and Installation**
 
 1. **Clone the repository:**
     
@@ -107,8 +112,7 @@ The project addresses GMF Investments' need for data-driven insights to provide 
     
     ```
     
-    
-2. **Create and activate a virtual environment:**
+2. **Create a virtual environment:**
     
     ```
     python3 -m venv venv
@@ -124,38 +128,53 @@ The project addresses GMF Investments' need for data-driven insights to provide 
     ```
     
 
-## **Usage**
+### **Usage**
 
-- To run the full project workflow from data fetching to backtesting, execute the main script:
+The main scripts for running the pipelines are located in the `src/scripts/` directory.
 
-
-    ```
-    python src/main.py
+- **To train both models and evaluate their performance:**
     
     ```
+    python src/scripts/run_train.py
     
-   This will:
-      - Fetch historical data for TSLA, BND, and SPY.
-      - Preprocess the data and perform EDA.
-      - Train and evaluate time series forecasting models.
-      - Forecast future TSLA prices.
-      - Optimize the portfolio using MPT.
-      - Backtest the strategy against a benchmark.
+    ```
+    
+- **To run a backtest on the trained models and export results:**
+    
+    ```
+    python src/scripts/run_backtest.py
+    
+    ```
+    
+- **To generate a new forecast for future periods:**
+    
+    ```
+    python src/scripts/run_forecast.py
+    
+    ```
+    
+- **To run the portfolio optimization and backtesting:**
+    
+    ```
+    python src/scripts/run_portfolio_opt.py
+    
+    ```
     
 
-## **Development and Evaluation**
+### **Development and Evaluation**
 
 This section will detail the process of model selection, parameter tuning, and performance evaluation. It will include a discussion on the trade-offs between ARIMA and LSTM models and the justification for the final chosen portfolio, which may prioritize maximum risk-adjusted return or minimum volatility.
-    - ARIMA/SARIMA – Parameter tuning via auto_arima.
-    - LSTM – Architecture tuning (layers, neurons, epochs, batch size).
-    - Evaluation Metrics – MAE, RMSE, MAPE for forecasts.
-    - Portfolio Metrics – Expected return, volatility, Sharpe Ratio.
-    - Backtesting – Cumulative returns comparison.
 
-## **Contributing**
+- **ARIMA/SARIMA**: Parameter tuning via `auto_arima`.
+- **LSTM**: Architecture tuning (layers, neurons, epochs, batch size).
+- **Evaluation Metrics**: MAE, RMSE, MAPE for forecasts.
+- **Portfolio Metrics**: Expected return, volatility, Sharpe Ratio.
+- **Backtesting**: Cumulative returns comparison.
+
+### **Contributing**
 
 Guidelines for contributing to the project.
 
-## **License**
+### **License**
 
 This project is licensed under the [MIT License](https://www.google.com/search?q=LICENSE).
