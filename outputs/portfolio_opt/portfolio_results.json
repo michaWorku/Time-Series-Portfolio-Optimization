@@ -1,0 +1,38 @@
+{
+  "max_sharpe": {
+    "weights": {
+      "TSLA": 0.02767,
+      "BND": 0.56286,
+      "SPY": 0.40947
+    },
+    "performance": {
+      "annual_return": 0.07520680263107343,
+      "annual_volatility": 1.4282971100331459,
+      "sharpe_ratio": 0.052654872787166906
+    }
+  },
+  "min_vol": {
+    "weights": {
+      "TSLA": 0.0,
+      "BND": 0.94261,
+      "SPY": 0.05739
+    },
+    "performance": {
+      "annual_return": 0.024869493253384965,
+      "annual_volatility": 0.8095114839019563,
+      "sharpe_ratio": 0.030721606484827864
+    }
+  },
+  "equal_weight": {
+    "weights": {
+      "TSLA": 0.3333333333333333,
+      "BND": 0.3333333333333333,
+      "SPY": 0.3333333333333333
+    },
+    "performance": {
+      "annual_return": 0.1607604564030078,
+      "annual_volatility": 3.885282742023964,
+      "sharpe_ratio": 0.041376771544627065
+    }
+  }
+}

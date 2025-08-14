@@ -166,5 +166,5 @@ logs/
 *.tmp
 *.temp
 
-/models/*
-/outputs/*
+# /models/*
+# /outputs/*
